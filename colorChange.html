@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 100px;
+            border: 3px solid skyblue;
+            background-color: slategrey;
+            cursor: pointer;
+        }
+    </style>
+</head>
+    <body>
+        <!-- addEventListener 사용해서 색깔 변경해보기-->
+
+        <div class="box"></div>
+        <script>
+            const $box = document.querySelector('.box');
+            const change = () => {
+                $box.style.backgroundColor = `#fff`;
+                $box.style.border = `dotted #ff0095`;
+            };
+            
+            $box.addEventListener('mouseover', () => {
+                
+                document.addEventListener('mouseover', change);
+               
+            });
+
+             $box.addEventListener('mouseout', () => {
+                document.removeEventListener('mouseover', change);
+            });
+
+            
+        </script>
+    </body>
+</html>
